@@ -1,0 +1,89 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Enum.swift",
+      "line": 139,
+      "symbol": "Enum.based",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 20,
+      "symbol": "Type.isExtension",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 24,
+      "symbol": "Type.kind",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 48,
+      "symbol": "Type.allVariables",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 64,
+      "symbol": "Type.allMethods",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 128,
+      "symbol": "Type.based",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 132,
+      "symbol": "Type.inherits",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 136,
+      "symbol": "Type.implements",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 150,
+      "symbol": "Type.parent",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Type.swift",
+      "line": 167,
+      "symbol": "Type.supertype",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/TypeName.swift",
+      "line": 160,
+      "symbol": "TypeName.description",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity/Sourcery/Models/Typealias.swift",
+      "line": null,
+      "symbol": "Typealias",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/ilya/Documents/Developer/iPhoneProjects/Insanity"
+}

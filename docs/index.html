@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sourcery  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a title="Sourcery  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">Sourcery Docs</a> (93% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">Sourcery Reference</a>
+        <img id="carat" src="img/carat.png" />
+        Sourcery  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/ArrayType.html">ArrayType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/AssociatedValue.html">AssociatedValue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Attribute.html">Attribute</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Class.html">Class</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/DictionaryType.html">DictionaryType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Enum.html">Enum</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/EnumCase.html">EnumCase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Method.html">Method</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/MethodParameter.html">MethodParameter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Protocol.html">Protocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Struct.html">Struct</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TupleElement.html">TupleElement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TupleType.html">TupleType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Type.html">Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/TypeName.html">TypeName</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes/Variable.html">Variable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Typealias.html">Typealias</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Protocols/Annotated.html">Annotated</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Protocols/Typed.html">Typed</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p><a href="https://circleci.com/gh/krzysztofzablocki/Sourcery"><img src="https://circleci.com/gh/krzysztofzablocki/Sourcery.svg?style=shield" alt="CircleCI"></a>
+<a href="https://codecov.io/gh/krzysztofzablocki/Sourcery"><img src="https://codecov.io/gh/krzysztofzablocki/Sourcery/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="http://cocoapods.org/pods/Sourcery"><img src="https://img.shields.io/cocoapods/v/Sourcery.svg?style=flat" alt="Version"></a>
+<a href="http://cocoapods.org/pods/Sourcery"><img src="https://img.shields.io/cocoapods/l/Sourcery.svg?style=flat" alt="License"></a>
+<a href="http://cocoapods.org/pods/Sourcery"><img src="https://img.shields.io/cocoapods/p/Sourcery.svg?style=flat" alt="Platform"></a></p>
+<a href='#what-is-sourcery' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='what-is-sourcery'>What is Sourcery?</h2>
+
+<p><em><strong>Sourcery</strong> scans your source code, applies your personal templates and generates Swift code for you, allowing you to use meta-programming techniques to save time and decrease potential mistakes.</em></p>
+
+<p><img src="Resources/icon-128.png"></p>
+
+<p>Using it offers many benefits:</p>
+
+<ul>
+<li>Write less repetitive code and make it easy to adhere to <a href="https://en.wikipedia.org/wiki/Don&#x27;t_repeat_yourself">DRY principle</a>.</li>
+<li>It allows you to create better code, one that would be hard to maintain without it, e.g. <a href="https://github.com/krzysztofzablocki/Sourcery/blob/master/Sourcery/Templates/Diffable.stencil">performing automatic property level difference in tests</a></li>
+<li>Limits the risk of introducing human error when refactoring.</li>
+<li>Sourcery <strong>doesn&rsquo;t use runtime tricks</strong>, in fact, it allows you to leverage compiler, even more, creating more safety.</li>
+<li><strong>Immediate feedback:</strong> Sourcery features built-in daemon support, enabling you to write your templates in real-time side-by-side with generated code.</li>
+</ul>
+
+<p><img src="Resources/daemon.gif" alt="Daemon demo"></p>
+
+<p><strong>Sourcery is so meta that it is used to code-generate its boilerplate code</strong></p>
+
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+<p><strong>Table of Contents</strong>  <em>generated with <a href="https://github.com/thlorenz/doctoc">DocToc</a></em></p>
+
+<ul>
+<li><a href="#what-is-sourcery">What is Sourcery?</a></li>
+<li><a href="#why">Why?</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#writing-templates">Writing templates</a>
+
+<ul>
+<li><a href="#custom-stencil-tags-and-filter">Custom Stencil tags and filter</a></li>
+<li><a href="#using-source-annotations">Using Source Annotations</a></li>
+<li><a href="#rules">Rules:</a></li>
+<li><a href="#format">Format:</a></li>
+<li><a href="#accessing-in-templates">Accessing in templates:</a></li>
+<li><a href="#inline-code-generation">Inline code generation</a></li>
+<li><a href="#per-file-code-generation">Per file code generation</a></li>
+</ul></li>
+<li><a href="#installing">Installing</a></li>
+<li><a href="#usage">Usage</a></li>
+<li><a href="#contributing">Contributing</a></li>
+<li><a href="#license">License</a></li>
+<li><a href="#attributions">Attributions</a></li>
+<li><a href="#other-libraries--tools">Other Libraries / Tools</a></li>
+</ul>
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+<a href='#why' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='why'>Why?</h2>
+
+<p>Swift features very limited runtime and no meta-programming features. Which leads our projects to contain boilerplate code.</p>
+
+<p>Sourcery exists to allow Swift developers to stop doing the same thing over and over again while still maintaining strong typing, preventing bugs and leveraging compiler.</p>
+
+<p>Have you ever?</p>
+
+<ul>
+<li>Had to write equatable/hashable?</li>
+<li>Had to write NSCoding support?</li>
+<li>Had to implement JSON serialization?</li>
+<li>Wanted to use Lenses?</li>
+</ul>
+
+<p>If you did then you probably found yourself writing repetitive code to deal with those scenarios, does this feel right?</p>
+
+<p>Even worse, if you ever add a new property to a type all of those implementations have to be updated, or you will end up with bugs.
+In those scenarios usually <strong>compiler will not generate the error for you</strong>, which leads to error prone code.</p>
+<a href='#examples' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='examples'>Examples</h2>
+
+<p><details>
+<summary>I want to generate <code>Equatable</code> implementation</summary></p>
+
+<p>Template used to generate equality for all types that conform to <code>:AutoEquatable</code>, allowing us to avoid writing boilerplate code.</p>
+
+<p>It adds <code>:Equatable</code> conformance to all types, except protocols (because it would require turning them into PAT&rsquo;s).
+For protocols it&rsquo;s just generating <code>func ==</code>.</p>
+<a href='#a-href-templates-autoequatable-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-autoequatable-stencil-stencil-template-a'><a href="Templates/AutoEquatable.stencil">Stencil template</a></h4>
+<a href='#available-variable-annotations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='available-variable-annotations'>Available variable annotations:</h4>
+
+<ul>
+<li><code>skipEquality</code> allows you to skip variable from being compared.</li>
+<li><code>arrayEquality</code> mark this to use array comparsion for variables that have array of items that don&rsquo;t implement <code>Equatable</code> but have <code>==</code> operator e.g. Protocols</li>
+</ul>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="c1">// MARK: - AdNodeViewModel AutoEquatable</span>
+<span class="kd">extension</span> <span class="kt">AdNodeViewModel</span><span class="p">:</span> <span class="kt">Equatable</span> <span class="p">{}</span>
+
+<span class="kd">internal</span> <span class="kd">func</span> <span class="o">==</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">AdNodeViewModel</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">AdNodeViewModel</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="n">lhs</span><span class="o">.</span><span class="n">remoteAdView</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">remoteAdView</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="k">guard</span> <span class="n">lhs</span><span class="o">.</span><span class="n">hidesDisclaimer</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">hidesDisclaimer</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="k">guard</span> <span class="n">lhs</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">type</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+    <span class="k">guard</span> <span class="n">lhs</span><span class="o">.</span><span class="n">height</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">height</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+
+    <span class="k">guard</span> <span class="n">lhs</span><span class="o">.</span><span class="n">attributedDisclaimer</span> <span class="o">==</span> <span class="n">rhs</span><span class="o">.</span><span class="n">attributedDisclaimer</span> <span class="k">else</span> <span class="p">{</span> <span class="k">return</span> <span class="kc">false</span> <span class="p">}</span>
+
+    <span class="k">return</span> <span class="kc">true</span>
+<span class="p">}</span>
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+<summary>I want to generate <code>Hashable</code> implementation</summary></p>
+
+<p>Template used to generate hashing for all types that conform to <code>:AutoHashable</code>, allowing us to avoid writing boilerplate code.</p>
+
+<p>It adds <code>:Hashable</code> conformance to all types, except protocols (because it would require turning them into PAT&rsquo;s).
+For protocols it&rsquo;s just generating <code>var hashValue</code> comparator.</p>
+<a href='#a-href-templates-autohashable-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-autohashable-stencil-stencil-template-a'><a href="Templates/AutoHashable.stencil">Stencil template</a></h4>
+<a href='#available-variable-annotations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='available-variable-annotations'>Available variable annotations:</h4>
+
+<ul>
+<li><code>skipHashing</code> allows you to skip variable from being compared.</li>
+<li><code>includeInHashing</code> is only applied on enums and allows us to add some computed variable into hashing logic</li>
+</ul>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="c1">// MARK: - AdNodeViewModel AutoHashable</span>
+<span class="kd">extension</span> <span class="kt">AdNodeViewModel</span><span class="p">:</span> <span class="kt">Hashable</span> <span class="p">{</span>
+
+    <span class="kd">internal</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nf">combineHashes</span><span class="p">(</span><span class="n">remoteAdView</span><span class="o">.</span><span class="n">hashValue</span><span class="p">,</span> <span class="n">hidesDisclaimer</span><span class="o">.</span><span class="n">hashValue</span><span class="p">,</span> <span class="n">type</span><span class="o">.</span><span class="n">hashValue</span><span class="p">,</span> <span class="n">height</span><span class="o">.</span><span class="n">hashValue</span><span class="p">,</span> <span class="n">attributedDisclaimer</span><span class="o">.</span><span class="n">hashValue</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+<summary>I want to list all cases in an enum</summary></p>
+
+<p>Generate <code>count</code> and <code>allCases</code> for any enumeration that is marked with <code>AutoCases</code> phantom protocol.</p>
+<a href='#a-href-templates-autocases-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-autocases-stencil-stencil-template-a'><a href="Templates/AutoCases.stencil">Stencil Template</a></h4>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">BetaSettingsGroup</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">count</span><span class="p">:</span> <span class="kt">Int</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">8</span> <span class="p">}</span>
+
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">allCases</span><span class="p">:</span> <span class="p">[</span><span class="kt">BetaSettingsGroup</span><span class="p">]</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">[</span>
+      <span class="o">.</span><span class="n">featuresInDevelopment</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">advertising</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">analytics</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">marketing</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">news</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">notifications</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">tech</span><span class="p">,</span>
+      <span class="o">.</span><span class="n">appInformation</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+<summary>I want to generate test mocks for protocols</summary></p>
+
+<p><em>Contributed by <a href="http://twitter.com/marinbenc">@marinbenc</a></em></p>
+<a href='#for-each-protocol-implementing-code-automockable-code-it-will' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='for-each-protocol-implementing-code-automockable-code-it-will'>For each protocol implementing <code>AutoMockable</code> it will&hellip;</h4>
+
+<p>Create a class called <code>ProtocolNameMock</code> in which it will&hellip;</p>
+
+<p><strong>For each function:</strong>
+ - Implement the function
+ - Add a <code>functionCalled</code> boolean to check if the function was called
+ - Add a <code>functionRecievedArguments</code> tuple to check the arguments that were passed to the function
+ - Add a <code>functionReturnValue</code> variable and return it when the function is called.</p>
+
+<p><strong>For each variable:</strong>
+ - Add a gettable and settable variable with the same name and type</p>
+<a href='#issues-and-limitations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='issues-and-limitations'>Issues and limitations:</h4>
+
+<ul>
+<li>Overloaded methods will produce compiler erros since the variables above the functions have the same name. Workaround: delete the variables on top of one of the functions, or rename them.</li>
+<li>Handling success/failure cases (for callbacks) is tricky to do automatically, so you have to do that yourself.</li>
+<li>This is <strong>not</strong> a full replacement for hand-written mocks, but it will get you 90% of the way there. Any more complex logic than changing return types, you will have to implement yourself. This only removes the most boring boilerplate you have to write.</li>
+</ul>
+<a href='#a-href-templates-automockable-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-automockable-stencil-stencil-template-a'><a href="Templates/AutoMockable.stencil">Stencil template</a></h4>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">MockableServiceMock</span><span class="p">:</span> <span class="kt">MockableService</span> <span class="p">{</span>
+    <span class="c1">//MARK: - functionWithArguments</span>
+    <span class="k">var</span> <span class="nv">functionWithArgumentsCalled</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">functionWithArgumentsRecievedArguments</span><span class="p">:</span> <span class="p">(</span><span class="nv">firstArgument</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">onComplete</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+
+    <span class="c1">//MARK: - functionWithCallback</span>
+    <span class="k">var</span> <span class="nv">functionWithCallbackCalled</span> <span class="o">=</span> <span class="kc">false</span>
+    <span class="k">var</span> <span class="nv">functionWithCallbackRecievedArguments</span><span class="p">:</span> <span class="p">(</span><span class="nv">firstArgument</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">onComplete</span><span class="p">:</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)?</span>
+
+    <span class="kd">func</span> <span class="nf">functionWithCallback</span><span class="p">(</span><span class="n">_</span> <span class="nv">firstArgument</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">onComplete</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt">String</span><span class="p">)</span><span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">functionWithCallbackCalled</span> <span class="o">=</span> <span class="kc">true</span>
+        <span class="n">functionWithCallbackRecievedArguments</span> <span class="o">=</span> <span class="p">(</span><span class="nv">firstArgument</span><span class="p">:</span> <span class="n">firstArgument</span><span class="p">,</span> <span class="nv">onComplete</span><span class="p">:</span> <span class="n">onComplete</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="o">...</span>
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+<summary>I want to generate Lenses for all structs</summary></p>
+
+<p><em>Contributed by <a href="http://twitter.com/filip_zawada">@filip_zawada</a></em></p>
+
+<p>What are Lenses? Great explanation by @mbrandonw</p>
+
+<p>This script assumes you follow swift naming convention, e.g. structs start with an upper letter.</p>
+<a href='#a-href-templates-autolenses-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-autolenses-stencil-stencil-template-a'><a href="Templates/AutoLenses.stencil">Stencil template</a></h4>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">House</span> <span class="p">{</span>
+
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">roomsLens</span> <span class="o">=</span> <span class="kt">Lens</span><span class="o">&lt;</span><span class="kt">House</span><span class="p">,</span> <span class="kt">Room</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nv">get</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">rooms</span> <span class="p">},</span>
+    <span class="nv">set</span><span class="p">:</span> <span class="p">{</span> <span class="n">rooms</span><span class="p">,</span> <span class="n">house</span> <span class="k">in</span>
+       <span class="kt">House</span><span class="p">(</span><span class="nv">rooms</span><span class="p">:</span> <span class="n">rooms</span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span> <span class="n">house</span><span class="o">.</span><span class="n">address</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="n">house</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">addressLens</span> <span class="o">=</span> <span class="kt">Lens</span><span class="o">&lt;</span><span class="kt">House</span><span class="p">,</span> <span class="kt">String</span><span class="o">&gt;</span><span class="p">(</span>
+  <span class="nv">get</span><span class="p">:</span> <span class="p">{</span> <span class="nv">$0</span><span class="o">.</span><span class="n">address</span> <span class="p">},</span>
+  <span class="nv">set</span><span class="p">:</span> <span class="p">{</span> <span class="n">address</span><span class="p">,</span> <span class="n">house</span> <span class="k">in</span>
+     <span class="kt">House</span><span class="p">(</span><span class="nv">rooms</span><span class="p">:</span> <span class="n">house</span><span class="o">.</span><span class="n">rooms</span><span class="p">,</span> <span class="nv">address</span><span class="p">:</span> <span class="n">address</span><span class="p">,</span> <span class="nv">size</span><span class="p">:</span> <span class="n">house</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+    <span class="p">}</span>
+  <span class="p">)</span>
+  <span class="o">...</span>
+</code></pre>
+
+<p></details></p>
+
+<p><details>
+<summary>I want to have diffing in tests</summary></p>
+
+<p>Template used to generate much better output when using equality in tests, instead of having to read wall of text it&rsquo;s used to generate precise property level differences. This template uses <a href="../../Sourcery/Models/Diffable.swift">Sourcery Diffable implementation</a></p>
+
+<p>from this:
+<img width="600" alt="before" src="https://cloud.githubusercontent.com/assets/1468993/21425370/0e3dd990-c849-11e6-877a-6dc80ae8f039.png"></p>
+
+<p>to this:
+<img width="373" alt="after" src="https://cloud.githubusercontent.com/assets/1468993/21425376/11e9ad94-c849-11e6-882a-e7927a3b2b08.png"></p>
+<a href='#a-href-sourcery-templates-diffable-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-sourcery-templates-diffable-stencil-stencil-template-a'><a href="Sourcery/Templates/Diffable.stencil">Stencil Template</a></h4>
+<a href='#available-annotations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='available-annotations'>Available annotations:</h4>
+
+<ul>
+<li><code>skipEquality</code> allows you to skip variable from being compared.
+</details></li>
+</ul>
+
+<p><details>
+<summary>I want to generate <code>LinuxMain.swift</code> for all my tests</summary></p>
+
+<p>For all test cases generates <code>allTests</code> static variable and passes all of them as <code>XCTestCaseEntry</code> to <code>XCTMain</code>. Run with <code>--args testimports=&#39;import MyTests&#39;</code> parameter to import test modules.</p>
+<a href='#a-href-templates-linuxmain-stencil-stencil-template-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='a-href-templates-linuxmain-stencil-stencil-template-a'><a href="Templates/LinuxMain.stencil">Stencil template</a></h4>
+<a href='#available-annotations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='available-annotations'>Available annotations:</h4>
+
+<ul>
+<li><code>disableTests</code> allows you to disable the whole test case.</li>
+</ul>
+<a href='#example-output' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='example-output'>Example output:</h4>
+<pre class="highlight swift"><code><span class="kd">import</span> <span class="kt">XCTest</span>
+<span class="c1">//testimports</span>
+
+<span class="kd">extension</span> <span class="kt">AutoInjectionTests</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">allTests</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s">"testThatItResolvesAutoInjectedDependencies"</span><span class="p">,</span> <span class="n">testThatItResolvesAutoInjectedDependencies</span><span class="p">),</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="kd">extension</span> <span class="kt">AutoWiringTests</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">var</span> <span class="nv">allTests</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s">"testThatItCanResolveWithAutoWiring"</span><span class="p">,</span> <span class="n">testThatItCanResolveWithAutoWiring</span><span class="p">),</span>
+    <span class="o">...</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+
+<span class="o">...</span>
+
+<span class="kt">XCTMain</span><span class="p">([</span>
+  <span class="nf">testCase</span><span class="p">(</span><span class="kt">AutoInjectionTests</span><span class="o">.</span><span class="n">allTests</span><span class="p">),</span>
+  <span class="nf">testCase</span><span class="p">(</span><span class="kt">AutoWiringTests</span><span class="o">.</span><span class="n">allTests</span><span class="p">),</span>
+  <span class="o">...</span>
+<span class="p">])</span>
+
+</code></pre>
+
+<p></details></p>
+<a href='#writing-templates' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='writing-templates'>Writing templates</h2>
+
+<p>Sourcery supports several types of templates:</p>
+
+<ul>
+<li><a href="https://github.com/kylef/Stencil">Stencil</a> templates</li>
+<li><a href="https://github.com/krzysztofzablocki/Sourcery/blob/master/SourceryTests/Stub/SwiftTemplates/Equality.swifttemplate">Swift</a> templates</li>
+<li><a href="https://github.com/krzysztofzablocki/Sourcery/blob/master/SourceryTests/Stub/JavaScriptTemplates/Equality.js">JavaScript</a> templates (using <a href="http://ejs.co">EJS</a>)</li>
+</ul>
+
+<p>Make sure you leverage Sourcery built-in daemon to make writing templates a pleasure:
+you can open template side-by-side with generated code and see it change live.</p>
+
+<p>There are multiple ways to access your types:</p>
+
+<ul>
+<li><code>type.TypeName</code> =&gt; access specific type by name</li>
+<li><code>types.all</code> =&gt; all types, excluding protocols</li>
+<li><code>types.classes</code></li>
+<li><code>types.structs</code></li>
+<li><code>types.enums</code></li>
+<li><code>types.protocols</code> =&gt; lists all protocols (that were defined in the project)</li>
+<li><code>types.inheriting.BaseClass</code> =&gt; lists all types inherting from known BaseClass (only those that were defined in source code that Sourcery scanned)</li>
+<li><code>types.implementing.Protocol</code> =&gt; lists all types conforming to given Protocol (only those that were defined in source code that Sourcery scanned)</li>
+<li><code>types.based.BaseClassOrProtocol</code> =&gt; lists all types implementing or inheriting from <code>BaseClassOrProtocol</code> (all type names encountered, even those that Sourcery didn&rsquo;t scan)</li>
+</ul>
+
+<p>All of these properties return <code>Type</code> objects.</p>
+
+<p><details><summary><strong>What are <em>known</em> and <em>unknown</em> types</strong></summary></p>
+
+<p>Currently Sourcery only scans files from a directory that you tell it to scan. This way it can get full information about types <em>defined</em> in these sources. These types are considered <em>known</em> types. For each of known types Sourcery provides <code>Type</code> object. You can get it for example by its name from <code>types</code> collection. <code>Type</code> object contains information about whether type that it describes is a struct, enum, class or a protocol, what are its properties and methods, what protocols it implements and so on. This is done recursively, so if you have a class that inherits from another class (or struct that implements a protocol) and they are both known types you will have information about both of them and you will be able to access parent type&rsquo;s <code>Type</code> object using <code>type.inherits.TypeName</code> (or <code>type.implements.ProtocolName</code>).</p>
+
+<p>Everything <em>defined</em> outside of scanned sources is considered as <em>unknown</em> types. For such types Sourcery doesn&rsquo;t provide <code>Type</code> object. For that reason variables (and other <q>typed</q> types, like method parameters etc.) of such types will only contain <code>typeName</code> property, but their <code>type</code> property will be <code>nil</code>. </p>
+
+<p>If you have an extension of unknown type defined in scanned sources Sourcery will create <code>Type</code> for it (it&rsquo;s <code>kind</code> property will be <code>extension</code>). But this object will contain only declarations defined in this extension. Several extensions of unknown type will be merged into one <code>Type</code> object the same way as extensions of known types.</p>
+
+<p>See #87 for details.
+</details></p>
+
+<p>Available types:</p>
+
+<p><details><summary><strong>Type</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- name</li>
+<li><code>kind</code> &lt;- convience accessor that will contain one of <code>enum</code>, <code>class</code>, <code>struct</code>, <code>protocol</code>, it will also provide <code>extension</code> for types that are unknown to us(e.g. 3rd party or objc), but had extension in the project</li>
+<li><code>isGeneric</code> &lt;- info whether the type is generic</li>
+<li><code>localName</code> &lt;- name within parent scope</li>
+<li><code>variables</code> &lt;- list of all variables defined in this type, excluding variables from protocols or inheritance
+
+<ul>
+<li>if you want to access all available variables, including those from inherited / protocol, then use <code>allVariables</code></li>
+<li>if you want to accces computed, stored, instance, or static variables, you can do so using our <a href="#custom-stencil-tags-and-filter">custom filters</a> on both <code>variables</code> and <code>allVariables</code></li>
+</ul></li>
+<li><code>methods</code> &lt;- list of all methods defined in this type, excluding those from protocols or inheritance</li>
+<li><code>allMethods</code> &lt;- same principles as in <code>allVariables</code></li>
+<li><code>initializers</code> &lt;- list of all initializers</li>
+<li><code>inherits.BaseClass</code> =&gt; if type is a class and it inherits from a known class named <code>BaseClass</code> this property returns <code>Type</code> object for <code>BaseClass</code>, otherwise returns <code>nil</code></li>
+<li><code>implements.Protocol</code> =&gt; if type implements a known protocol named <code>Protocol</code> this property returns <code>Type</code> object for <code>Protocol</code>, otherwise returns <code>nil</code></li>
+<li><code>based.BaseClassOrProtocol</code> =&gt; if type either implements a protocol or inherits from a class named <code>BaseClassOrProtocol</code> this property returns <code>BaseClassOrProtocol</code> itself, otherwise returns <code>nil</code>. All type names encountered, even those that Sourcery didn&rsquo;t scan</li>
+<li><code>containedTypes</code> &lt;- list of types contained within this type</li>
+<li><code>parentName</code> &lt;- list of parent type (for contained ones)</li>
+<li><code>attributes</code> &lt;- type attributes, i.e. <code>type.attributes.objc</code></li>
+<li><code>annotations</code> &lt;- dictionary with configured <a href="#source-annotations">annotations</a></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary> <strong>Enum</strong>. Built on top of <code>Type</code> and provides some additional properties:</summary></p>
+
+<ul>
+<li><code>rawType</code> &lt;- enum raw type</li>
+<li><code>cases</code> &lt;- list of <code>Enum.Case</code></li>
+<li><code>hasAssociatedValues</code> &lt;- true if any of cases has associated values</li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>EnumCase</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- name</li>
+<li><code>rawValue</code> &lt;- raw value</li>
+<li><code>associatedValues</code> &lt;- list of <code>AssociatedValue</code></li>
+<li><code>annotations</code> &lt;- dictionary with configured <a href="#source-annotations">annotations</a></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>AssociatedValue</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>localName</code> &lt;- name to use to construct value, i.e. <code>value</code> in <code>Foo.foo(value: ...)</code></li>
+<li><code>externalName</code> &lt;- name to use when binding value, i.e. <code>value</code> or <code>other</code> in <code>enum Foo { case foo(value: ..., other: ... )}</code>. Will use index as a fallback</li>
+<li><code>typeName</code> &lt;- name of type of associated value (<em>TypeName</em>)</li>
+<li><code>actualTypeName</code> &lt;- returns <code>typeName.actualTypeName</code> or if it&rsquo;s <code>nil</code> returns <code>typeName</code></li>
+<li><code>unwrappedTypeName</code> &lt;- shorthand for <code>typeName.unwrappedTypeName</code></li>
+<li><code>isOptional</code> &lt;- shorthand for <code>typeName.isOptional</code></li>
+<li><code>isImplicitlyUnwrappedOptional</code> &lt;- shorthand for <code>typeName. isImplicitlyUnwrappedOptional</code></li>
+<li><code>isTuple</code> &lt;- shorthand for <code>typeName.isTuple</code></li>
+<li><code>isClosure</code> &lt;- shorthand for <code>typeName.isClosure</code></li>
+<li><code>isArray</code> &lt;- shorthand for <code>typeName.isArray</code></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>Variable</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- Name</li>
+<li><code>type</code> &lt;- type of the variable, if known</li>
+<li><code>typeName</code> &lt;- returns name of the type (<em>TypeName</em>)</li>
+<li><code>actualTypeName</code> &lt;- returns <code>typeName.actualTypeName</code> or if it&rsquo;s <code>nil</code> returns <code>typeName</code></li>
+<li><code>unwrappedTypeName</code> &lt;- shorthand for <code>typeName.unwrappedTypeName</code></li>
+<li><code>isOptional</code> &lt;- shorthand for <code>typeName.isOptional</code></li>
+<li><code>isImplicitlyUnwrappedOptional</code> &lt;- shorthand for <code>typeName. isImplicitlyUnwrappedOptional</code></li>
+<li><code>isComputed</code> &lt;- whether is computed</li>
+<li><code>isStatic</code> &lt;- whether is static variable</li>
+<li><code>isTuple</code> &lt;- shorthand for <code>typeName.isTuple</code></li>
+<li><code>isClosure</code> &lt;- shorthand for <code>typeName.isClosure</code></li>
+<li><code>isArray</code> &lt;- shorthand for <code>typeName.isArray</code></li>
+<li><code>readAccess</code> &lt;- what is the protection access for reading?</li>
+<li><code>writeAccess</code> &lt;- what is the protection access for writing?</li>
+<li><code>attributes</code> &lt;- variable attributes, i.e. <code>var.attributes.NSManaged</code></li>
+<li><code>annotations</code> &lt;- dictionary with configured <a href="#source-annotations">annotations</a></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>Method</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- full name of the method including generic constraints, i.e. <code>func foo(bar: Bar)</code> or <code>foo&lt;T&gt;(bar: T)</code></li>
+<li><code>selectorName</code> &lt;- selector name of the method, i.e for <code>func foo(bar: Bar) -&gt; Bar</code> it is <code>foo(bar:)</code>, for <code>func foo&lt;T&gt;(bar: T)</code> it is <code>foo(bar:)</code></li>
+<li><code>shortName</code> &lt;- short method name, i.e. for <code>func foo(bar: Bar) -&gt; Bar</code> it is <code>foo</code>, for <code>func foo&lt;T&gt;(bar: T)</code> it is <code>foo&lt;T&gt;</code></li>
+<li><code>parameters</code> &lt;- list of all method parameters</li>
+<li><code>returnType</code> &lt;- return type, if known, for initializers - containing type</li>
+<li><code>returnTypeName</code> &lt;- return type name (<em>TypeName</em>). Will be <code>Void</code> for methods without return value or empty string for initializers. For generic methods can include generic constraints specified with <code>where</code>, i.e. <code>func foo&lt;T&gt;(bar: T) -&gt; T where T: Equatable</code> it is <code>T where T: Equatable</code></li>
+<li><code>actualReturnTypeName</code> &lt;- returns <code>returnTypeName.actualTypeName</code> or if it&rsquo;s <code>nil</code> returns <code>returnTypeName</code></li>
+<li><code>unwrappedReturnTypeName</code> &lt;- shorthand for <code>returnTypeName.unwrappedTypeName</code></li>
+<li><code>isOptionalReturnType</code> &lt;- shorthand for <code>returnTypeName.isOptional</code></li>
+<li><code>isImplicitlyUnwrappedOptionalReturnType</code> &lt;- shorthand for <code>returnTypeName. isImplicitlyUnwrappedOptional</code></li>
+<li><code>accessLevel</code> &lt;- method access level</li>
+<li><code>isStatic</code> &lt;- whether method is static</li>
+<li><code>isClass</code> &lt;- whether method is class (can be overriden by subclasses)</li>
+<li><code>isInitializer</code> &lt;- whether method is an initializer</li>
+<li><code>isFailableInitializer</code> &lt;- whether method is failable initializer</li>
+<li><code>attributes</code> &lt;- method attributes, i.e. <code>method.attributes.discardableResult</code></li>
+<li><code>annotations</code> &lt;- dictionary with configured <a href="#source-annotations">annotations</a></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>MethodParameter</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- parameter name</li>
+<li><code>argumentLabel</code> &lt;- argument label (external name), if not set will be eqal to <code>name</code></li>
+<li><code>type</code> &lt;- type of parameter, if known</li>
+<li><code>typeName</code> &lt;- parameter type name (<em>TypeName</em>)</li>
+<li><code>actualTypeName</code> &lt;- returns <code>typeName.actualTypeName</code> or if it&rsquo;s <code>nil</code> returns <code>typeName</code></li>
+<li><code>unwrappedTypeName</code> &lt;- shorthand for <code>typeName.unwrappedTypeName</code></li>
+<li><code>isOptional</code> &lt;- shorthand for <code>typeName.isOptional</code></li>
+<li><code>isImplicitlyUnwrappedOptional</code> &lt;- shorthand for <code>typeName. isImplicitlyUnwrappedOptional</code></li>
+<li><code>isTuple</code> &lt;- shorthand for <code>typeName.isTuple</code></li>
+<li><code>isClosure</code> &lt;- shorthand for <code>typeName.isClosure</code></li>
+<li><code>isArray</code> &lt;- shorthand for <code>typeName.isArray</code></li>
+<li><code>typeAttributes</code> &lt;- parameter&rsquo;s type attributes, shorthand for <code>typeName.attributes</code>, i.e. <code>param.typeAttributes.escaping</code></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>TypeName</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- type name</li>
+<li><code>actualTypeName</code> &lt;- if given type is a typealias or contained type name will contain actual fully qualified type name</li>
+<li><code>unwrappedTypeName</code> &lt;- returns name of the type, unwrapping the optional e.g. for variable with type <code>Int?</code> this would return <code>Int</code>, removing attributes and generic constraints</li>
+<li><code>isOptional</code> &lt;- whether is optional</li>
+<li><code>isImplicitlyUnwrappedOptional</code> &lt;- whether is implicitly unwrapped optional</li>
+<li><code>isVoid</code> &lt;- whether type is Void (<code>Void</code> or <code>()</code>)</li>
+<li><code>isTuple</code> &lt;- whether given type is a tuple</li>
+<li><code>tuple</code> &lt;- returns information about tuple type (<em>TupleType</em>) based on <code>actualTypeName.unwrappedTypeName</code></li>
+<li><code>isClosure</code> &lt;- shorthand for <code>typeName.isClosure</code></li>
+<li><code>isArray</code> &lt;- shorthand for <code>typeName.isArray</code></li>
+<li><code>attributes</code> &lt;- type attributes, i.e. <code>typeName.attributes.escaping</code></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>TupleType</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- type name</li>
+<li><code>elements</code> &lt;- returns tuple elements information (<em>TupleElement</em>)</li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>TupleElement</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- element name</li>
+<li><code>type</code> &lt;- type of element, if known</li>
+<li><code>typeName</code> &lt;- element type name (<em>TypeName</em>)</li>
+<li><code>unwrappedTypeName</code> &lt;- shorthand for <code>typeName.unwrappedTypeName</code></li>
+<li><code>isOptional</code> &lt;- shorthand for <code>typeName.isOptional</code></li>
+<li><code>isTuple</code> &lt;- shorthand for <code>typeName.isTuple</code></li>
+<li><code>isClosure</code> &lt;- shorthand for <code>typeName.isClosure</code></li>
+</ul>
+
+<p></details></p>
+
+<p><details><summary><strong>ArrayType</strong>. Properties:</summary></p>
+
+<ul>
+<li><code>name</code> &lt;- type name</li>
+<li><code>elementType</code> &lt;- array element type, if known</li>
+<li><code>elementTypeName</code> &lt;- array element type name (<em>TypeName</em>)</li>
+</ul>
+
+<p></details></p>
+<a href='#custom-stencil-tags-and-filter' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='custom-stencil-tags-and-filter'>Custom Stencil tags and filter</h3>
+
+<ul>
+<li><code>{{ name|upperFirst }}</code> - makes first letter in <code>name</code> uppercase</li>
+<li><code>{{ name|replace:&quot;substring&quot;,&quot;replacement&quot; }}</code> - replaces occurances of <code>substring</code> with <code>replacement</code> in <code>name</code> (case sensitive)</li>
+<li><code>{% if name|contains:&quot;Foo&quot; %}</code> - check if <code>name</code> contains arbitrary substring, can be negated with <code>!</code> prefix.</li>
+<li><code>{% if name|hasPrefix:&quot;Foo&quot; %}</code>- check if <code>name</code> starts with arbitrary substring, can be negated with <code>!</code> prefix.</li>
+<li><code>{% if name|hasSuffix:&quot;Foo&quot; %}</code>- check if <code>name</code> ends with arbitrary substring, can be negated with <code>!</code> prefix.</li>
+<li><code>static</code>, <code>instance</code>, <code>computed</code>, <code>stored</code>, <code>tuple</code> - can be used on Variable[s] as filter e.g. <code>{% for var in variables|instance %}</code>, can be negated with <code>!</code> prefix.</li>
+<li><code>static</code>, <code>instance</code>, <code>class</code>, <code>initializer</code> - can be used on Method[s] as filter e.g. <code>{% for method in allMethods|instance %}</code>, can be negated with <code>!</code> prefix.</li>
+<li><code>enum</code>, <code>class</code>, <code>struct</code>, <code>protocol</code> - can be used for Type[s] as filter, can be negated with <code>!</code> prefix.</li>
+<li><code>based</code>, <code>implements</code>, <code>inherits</code> - can be used for Type[s], Variable[s], Associated value[s], can be negated with <code>!</code> prefix.</li>
+<li><code>count</code> - can be used to get count of filtered array</li>
+<li><code>annotated</code> - can be used on Type[s], Variable[s], Method[s] and Enum Case[s] to filter by annotation, e.g. <code>{% for var in variable|annotated: \&quot;skipDescription\&quot;%}</code>, can be negated with <code>!</code> prefix.</li>
+</ul>
+<a href='#using-source-annotations' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='using-source-annotations'>Using Source Annotations</h3>
+
+<p>Sourcery supports annotating your classes and variables with special annotations, similar how attributes work in Rust / Java</p>
+<pre class="highlight swift"><code><span class="c1">/// sourcery: skipPersistence</span>
+<span class="c1">/// Some documentation comment</span>
+<span class="c1">/// sourcery: anotherAnnotation = 232, yetAnotherAnnotation = "value"</span>
+<span class="c1">/// Documentation</span>
+<span class="k">var</span> <span class="nv">precomputedHash</span><span class="p">:</span> <span class="kt">Int</span>
+</code></pre>
+
+<p>If you want to attribute multiple items with same attributes, you can use section annotations:
+<code>swift
+/// sourcery:begin: skipEquality, skipPersistence
+  var firstVariable: Int
+  var secondVariable: Int
+/// sourcery:end
+</code></p>
+<a href='#rules' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='rules'>Rules:</h4>
+
+<ul>
+<li>Multiple annotations can occur on the same line</li>
+<li>You can add multiline annotations</li>
+<li>You can interleave annotations with documentation</li>
+<li>Sourcery scans all <code>sourcery:</code> annotations in the given comment block above the source until first non-comment/doc line</li>
+</ul>
+<a href='#format' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='format'>Format:</h4>
+
+<ul>
+<li>simple entry, e.g. <code>sourcery: skipPersistence</code></li>
+<li>key = number, e.g. <code>sourcery: another = 123</code></li>
+<li>key = string, e.g. <code>sourcery: jsonKey = &quot;json_key&quot;</code></li>
+</ul>
+<a href='#accessing-in-templates' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='accessing-in-templates'>Accessing in templates:</h4>
+<pre class="highlight swift"><code><span class="p">{</span><span class="o">%</span> <span class="n">ifnot</span> <span class="n">variable</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">skipPersistence</span> <span class="o">%</span><span class="p">}</span>
+  <span class="k">var</span> <span class="nv">local</span><span class="p">{{</span> <span class="n">variable</span><span class="o">.</span><span class="n">name</span><span class="o">|</span><span class="n">capitalize</span> <span class="p">}}</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"{{ variable.annotations.jsonKey }}"</span><span class="p">]</span> <span class="k">as?</span> <span class="p">{{</span> <span class="n">variable</span><span class="o">.</span><span class="n">typeName</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</code></pre>
+<a href='#checking-for-existance-of-at-least-one-annotation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='checking-for-existance-of-at-least-one-annotation'>Checking for existance of at least one annotation:</h4>
+
+<p>Sometimes it is desirable to only generate code if there&rsquo;s at least one field annotated.</p>
+<pre class="highlight swift"><code><span class="p">{</span><span class="o">%</span> <span class="k">if</span> <span class="n">type</span><span class="o">.</span><span class="n">variables</span><span class="o">|</span><span class="nv">annotated</span><span class="p">:</span><span class="s">"jsonKey"</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="k">for</span> <span class="k">var</span> <span class="nv">in</span> <span class="n">type</span><span class="o">.</span><span class="n">variables</span><span class="o">|</span><span class="n">instance</span><span class="o">|</span><span class="nv">annotated</span><span class="p">:</span><span class="s">"jsonKey"</span> <span class="o">%</span><span class="p">}</span>
+  <span class="k">var</span> <span class="nv">local</span><span class="p">{{</span> <span class="kd">var</span><span class="o">.</span><span class="n">name</span><span class="o">|</span><span class="n">capitalize</span> <span class="p">}}</span> <span class="o">=</span> <span class="n">json</span><span class="p">[</span><span class="s">"{{ var.annotations.jsonKey }}"</span><span class="p">]</span> <span class="k">as?</span> <span class="p">{{</span> <span class="kd">var</span><span class="o">.</span><span class="n">typeName</span> <span class="p">}}</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}{</span><span class="o">%</span> <span class="n">endif</span> <span class="o">%</span><span class="p">}</span>
+</code></pre>
+<a href='#inline-code-generation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='inline-code-generation'>Inline code generation</h3>
+
+<p>Sourcery supports inline code generation, you just need to put same markup in your code and template, e.g.</p>
+<pre class="highlight swift"><code><span class="c1">// in template:</span>
+
+<span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">type</span> <span class="k">in</span> <span class="n">types</span><span class="o">.</span><span class="n">all</span> <span class="o">%</span><span class="p">}</span>
+<span class="c1">// sourcery:inline:{{ type.name }}.TemplateName</span>
+<span class="c1">// sourcery:end</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+
+<span class="c1">// in source code:</span>
+
+<span class="kd">class</span> <span class="kt">MyType</span> <span class="p">{</span>
+
+<span class="c1">// sourcery:inline:MyType.TemplateName</span>
+<span class="c1">// sourcery:end</span>
+
+<span class="p">}</span>
+</code></pre>
+
+<p>Sourcery will generate the template code and then perform replacement in your source file. Inlined generated code is not parsed to avoid chicken-egg problem.</p>
+<a href='#per-file-code-generation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h3 id='per-file-code-generation'>Per file code generation</h3>
+
+<p>Sourcery supports generating code in a separate file per type, you just need to put <code>file</code> annotation in a template, e.g.</p>
+<pre class="highlight swift"><code><span class="p">{</span><span class="o">%</span> <span class="k">for</span> <span class="n">type</span> <span class="k">in</span> <span class="n">types</span><span class="o">.</span><span class="n">all</span> <span class="o">%</span><span class="p">}</span>
+<span class="c1">// sourcery:file:Generated/{{ type.name}}+TemplateName</span>
+<span class="c1">// sourcery:end</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">endfor</span> <span class="o">%</span><span class="p">}</span>
+</code></pre>
+
+<p>Sourcery will generate the template code and then write its annotated parts to corresponding files. In example above it will create <code>Generated/&lt;type name&gt;+TemplateName.generated.swift</code> file for each of scanned types.</p>
+
+<p>If you add an extension to the file name Sourcery will not append <code>generated.swift</code> extension.</p>
+<a href='#installing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='installing'>Installing</h2>
+
+<p><details>
+<summary>Binary form</summary>
+The easiest way to download the tool right now is to just grab a newest <code>.zip</code> distribution from <a href="https://github.com/krzysztofzablocki/Sourcery/releases">releases tab</a>.
+</details></p>
+
+<p><details>
+<summary>Via CocoaPods</summary>
+If you&rsquo;re using CocoaPods, you can simply add pod &lsquo;Sourcery&rsquo; to your Podfile.</p>
+
+<p>This will download the Sourcery binaries and dependencies in <code>Pods/</code>.
+You just need to add <code>$PODS_ROOT/Sourcery/bin/sourcery {source} {templates} {output}</code> in your Script Build Phases.
+</details></p>
+
+<p><details>
+<summary>Via Swift Package Manager</summary>
+If you&rsquo;re using SwiftPM, you can simply add &#39;Sourcery&rsquo; to your manifest.</p>
+
+<p>Sourcery is placed in <code>Packages</code>.
+After your first <code>swift build</code>, you can run <code>.build/debug/sourcery {source} {templates} {output}</code>.
+</details></p>
+
+<p><details>
+<summary>From Source</summary>
+You can clone it from the repo and just run <code>Sourcery.xcworkspace</code>.
+</details></p>
+<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+
+<p>Sourcery is a command line tool <code>sourcery</code>:
+<code>
+$ ./sourcery --sources &lt;sources path&gt; --templates &lt;templates path&gt; --output &lt;output path&gt; [--args arg1=value,arg2]
+</code>
+Arguments:</p>
+
+<ul>
+<li>sources - Path to a source swift files. You can provide multiple paths using multiple <code>--sources</code> option.</li>
+<li>templates - Path to templates. File or Directory. You can provide multiple paths using multiple <code>--templates</code> options.</li>
+<li>output - Path to output. File or Directory.</li>
+<li>args - Additional arguments to pass to templates. Each argument can have explicit value or will have implicit <code>true</code> value. Arguments should be separated with <code>,</code> without spaces. Arguments are accessible in templates via <code>argument.name</code></li>
+</ul>
+
+<p>You can also provide arguments using <code>.sourcery.yml</code> file in project&rsquo;s root directory, like this:</p>
+<pre class="highlight yaml"><code><span class="s">sources</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">&lt;sources path&gt;</span>
+  <span class="pi">-</span> <span class="s">&lt;sources path&gt;</span>
+<span class="s">templates</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">&lt;templates path&gt;</span>
+  <span class="pi">-</span> <span class="s">&lt;templates path&gt;</span>
+<span class="s">output</span><span class="pi">:</span>
+  <span class="s">&lt;output path&gt;</span>
+<span class="s">args</span><span class="pi">:</span>
+  <span class="s">&lt;name&gt;</span><span class="pi">:</span> <span class="s">&lt;value&gt;</span>
+</code></pre>
+
+<p>Options:</p>
+
+<ul>
+<li><code>--watch</code> [default: false] - Watch both code and template folders for changes and regenerate automatically.</li>
+<li><code>--verbose</code> [default: false] - Turn on verbose logging for ignored entities</li>
+</ul>
+<a href='#contributing' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='contributing'>Contributing</h2>
+
+<p>Contributions to Sourcery are welcomed and encouraged!</p>
+
+<p>It is easy to get involved. Please see the <a href="CONTRIBUTING.md">Contributing guide</a> for more details.</p>
+
+<p><a href="https://github.com/krzysztofzablocki/Sourcery/graphs/contributors">A list of contributors is available through GitHub.</a></p>
+
+<p>To give clarity of what is expected of our community, Sourcery has adopted the code of conduct defined by the Contributor Covenant. This document is used across many open source communities, and I think it articulates my values well. For more, see the <a href="CODE_OF_CONDUCT.md">Code of Conduct</a>.</p>
+<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+
+<p>Sourcery is available under the MIT license. See <a href="LICENSE">LICENSE</a> for more information.</p>
+<a href='#attributions' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='attributions'>Attributions</h2>
+
+<p>This tool is powered by</p>
+
+<ul>
+<li><a href="https://github.com/jpsim/SourceKitten">SourceKitten</a> by <a href="https://github.com/jpsim">JP Simard</a></li>
+<li><a href="https://github.com/kylef/Stencil">Stencil</a> and few other libs by <a href="https://github.com/kylef">Kyle Fuller</a></li>
+</ul>
+
+<p>Thank you! for:</p>
+
+<ul>
+<li><a href="http://twitter.com/faktory">Mariusz Ostrowski</a> for creating the logo.</li>
+<li><a href="https://github.com/artsy/eidolon">Artsy Eidolon</a> team, because we use their codebase as a stub data for performance testing the parser.</li>
+<li><a href="https://github.com/AliSoftware">Olivier Halligon</a> for showing me his setup scripts for CLI tools which are powering our rakefile.</li>
+</ul>
+<a href='#other-libraries-tools' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='other-libraries-tools'>Other Libraries / Tools</h2>
+
+<p>If you want to generate code for asset related data like .xib, .storyboards etc. use <a href="https://github.com/AliSoftware/SwiftGen">SwiftGen</a>. SwiftGen and Sourcery are complementary tools.</p>
+
+<p>Make sure to check my other libraries and tools, especially:
+- <a href="https://github.com/krzysztofzablocki/KZPlayground">KZPlayground</a> - Powerful playgrounds for Swift and Objective-C
+- <a href="https://github.com/krzysztofzablocki/KZFileWatchers">KZFileWatchers</a> - Daemon for observing local and remote file changes, used for building other developer tools (Sourcery uses it)</p>
+
+<p>You can <a href="http://twitter.com/merowing_">follow me on twitter</a> for news/updates about other projects I am creating.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="https://github.com/krzysztofzablocki/Sourcery" target="_blank" rel="external">Krzysztof Zabłocki</a>. All rights reserved. (Last updated: 2017-03-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
