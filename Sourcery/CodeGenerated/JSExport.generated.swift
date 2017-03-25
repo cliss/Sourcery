@@ -1,4 +1,4 @@
-// Generated using Sourcery 0.5.8 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.5.9 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 import JavaScriptCore
@@ -39,8 +39,8 @@ extension Attribute: AttributeAutoJSExport {}
     var localName: String { get }
     var variables: [Variable] { get }
     var allVariables: [Variable] { get }
-    var allMethods: [Method] { get }
     var methods: [Method] { get }
+    var allMethods: [Method] { get }
     var initializers: [Method] { get }
     var annotations: [String: NSObject] { get }
     var staticVariables: [Variable] { get }
@@ -84,8 +84,8 @@ extension DictionaryType: DictionaryTypeAutoJSExport {}
     var localName: String { get }
     var variables: [Variable] { get }
     var allVariables: [Variable] { get }
-    var allMethods: [Method] { get }
     var methods: [Method] { get }
+    var allMethods: [Method] { get }
     var initializers: [Method] { get }
     var annotations: [String: NSObject] { get }
     var staticVariables: [Variable] { get }
@@ -117,8 +117,9 @@ extension EnumCase: EnumCaseAutoJSExport {}
 @objc protocol MethodAutoJSExport: JSExport {
     var name: String { get }
     var selectorName: String { get }
-    var parameters: [MethodParameter] { get }
     var shortName: String { get }
+    var callName: String { get }
+    var parameters: [MethodParameter] { get }
     var returnTypeName: TypeName { get }
     var actualReturnTypeName: TypeName { get }
     var returnType: Type? { get }
@@ -158,8 +159,8 @@ extension MethodParameter: MethodParameterAutoJSExport {}
     var localName: String { get }
     var variables: [Variable] { get }
     var allVariables: [Variable] { get }
-    var allMethods: [Method] { get }
     var methods: [Method] { get }
+    var allMethods: [Method] { get }
     var initializers: [Method] { get }
     var annotations: [String: NSObject] { get }
     var staticVariables: [Variable] { get }
@@ -187,8 +188,8 @@ extension Protocol: ProtocolAutoJSExport {}
     var localName: String { get }
     var variables: [Variable] { get }
     var allVariables: [Variable] { get }
-    var allMethods: [Method] { get }
     var methods: [Method] { get }
+    var allMethods: [Method] { get }
     var initializers: [Method] { get }
     var annotations: [String: NSObject] { get }
     var staticVariables: [Variable] { get }
@@ -234,8 +235,8 @@ extension TupleType: TupleTypeAutoJSExport {}
     var localName: String { get }
     var variables: [Variable] { get }
     var allVariables: [Variable] { get }
-    var allMethods: [Method] { get }
     var methods: [Method] { get }
+    var allMethods: [Method] { get }
     var initializers: [Method] { get }
     var annotations: [String: NSObject] { get }
     var staticVariables: [Variable] { get }

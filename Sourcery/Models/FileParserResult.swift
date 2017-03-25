@@ -28,7 +28,8 @@ import Foundation
     }
 
     // sourcery:inline:FileParserResult.AutoCoding
-        required init?(coder aDecoder: NSCoder) {
+        /// :nodoc:
+        required internal init?(coder aDecoder: NSCoder) {
             self.path = aDecoder.decode(forKey: "path")
             guard let types: [Type] = aDecoder.decode(forKey: "types") else { NSException.raise(NSExceptionName.parseErrorException, format: "Key '%@' not found.", arguments: getVaList(["types"])); fatalError() }; self.types = types
             guard let typealiases: [Typealias] = aDecoder.decode(forKey: "typealiases") else { NSException.raise(NSExceptionName.parseErrorException, format: "Key '%@' not found.", arguments: getVaList(["typealiases"])); fatalError() }; self.typealiases = typealiases
@@ -37,7 +38,8 @@ import Foundation
             guard let sourceryVersion: String = aDecoder.decode(forKey: "sourceryVersion") else { NSException.raise(NSExceptionName.parseErrorException, format: "Key '%@' not found.", arguments: getVaList(["sourceryVersion"])); fatalError() }; self.sourceryVersion = sourceryVersion
         }
 
-        func encode(with aCoder: NSCoder) {
+        /// :nodoc:
+        internal func encode(with aCoder: NSCoder) {
             aCoder.encode(self.path, forKey: "path")
             aCoder.encode(self.types, forKey: "types")
             aCoder.encode(self.typealiases, forKey: "typealiases")

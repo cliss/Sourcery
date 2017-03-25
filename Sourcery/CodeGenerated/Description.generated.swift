@@ -1,8 +1,9 @@
-// Generated using Sourcery 0.5.8 — https://github.com/krzysztofzablocki/Sourcery
+// Generated using Sourcery 0.5.9 — https://github.com/krzysztofzablocki/Sourcery
 // DO NOT EDIT
 
 extension ArrayType {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "elementTypeName = \(self.elementTypeName), "
@@ -11,7 +12,8 @@ extension ArrayType {
     }
 }
 extension AssociatedValue {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "localName = \(self.localName), "
         string += "externalName = \(self.externalName), "
@@ -20,14 +22,16 @@ extension AssociatedValue {
     }
 }
 extension Class {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = super.description
         string += "kind = \(self.kind)"
         return string
     }
 }
 extension DictionaryType {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "valueTypeName = \(self.valueTypeName), "
@@ -38,7 +42,8 @@ extension DictionaryType {
     }
 }
 extension Enum {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = super.description
         string += "cases = \(self.cases), "
         string += "rawTypeName = \(self.rawTypeName), "
@@ -47,7 +52,8 @@ extension Enum {
     }
 }
 extension EnumCase {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "rawValue = \(self.rawValue), "
@@ -58,7 +64,8 @@ extension EnumCase {
     }
 }
 extension FileParserResult {
-    override var description: String {
+    /// :nodoc:
+    override internal var description: String {
         var string = "\(type(of: self)): "
         string += "path = \(self.path), "
         string += "types = \(self.types), "
@@ -70,7 +77,8 @@ extension FileParserResult {
     }
 }
 extension GenerationContext {
-    override var description: String {
+    /// :nodoc:
+    override internal var description: String {
         var string = "\(type(of: self)): "
         string += "types = \(self.types), "
         string += "typeByName = \(self.typeByName), "
@@ -84,11 +92,13 @@ extension GenerationContext {
     }
 }
 extension Method {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
-        string += "parameters = \(self.parameters), "
         string += "shortName = \(self.shortName), "
+        string += "callName = \(self.callName), "
+        string += "parameters = \(self.parameters), "
         string += "returnTypeName = \(self.returnTypeName), "
         string += "actualReturnTypeName = \(self.actualReturnTypeName), "
         string += "`throws` = \(self.`throws`), "
@@ -103,7 +113,8 @@ extension Method {
     }
 }
 extension MethodParameter {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "argumentLabel = \(self.argumentLabel), "
         string += "name = \(self.name), "
@@ -113,21 +124,24 @@ extension MethodParameter {
     }
 }
 extension Protocol {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = super.description
         string += "kind = \(self.kind)"
         return string
     }
 }
 extension Struct {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = super.description
         string += "kind = \(self.kind)"
         return string
     }
 }
 extension TupleElement {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "typeName = \(self.typeName)"
@@ -135,7 +149,8 @@ extension TupleElement {
     }
 }
 extension TupleType {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "elements = \(self.elements)"
@@ -143,7 +158,8 @@ extension TupleType {
     }
 }
 extension Type {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "typealiases = \(self.typealiases), "
         string += "isExtension = \(self.isExtension), "
@@ -169,7 +185,8 @@ extension Type {
     }
 }
 extension Typealias {
-    override var description: String {
+    /// :nodoc:
+    override internal var description: String {
         var string = "\(type(of: self)): "
         string += "aliasName = \(self.aliasName), "
         string += "typeName = \(self.typeName), "
@@ -179,7 +196,8 @@ extension Typealias {
     }
 }
 extension Variable {
-    override var description: String {
+    /// :nodoc:
+    override public var description: String {
         var string = "\(type(of: self)): "
         string += "name = \(self.name), "
         string += "typeName = \(self.typeName), "
